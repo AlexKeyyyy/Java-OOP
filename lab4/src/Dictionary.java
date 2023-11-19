@@ -45,19 +45,14 @@ public class Dictionary {
         }
     }
 
-    public String getTranslation(String word)
+    public String getTranslation(String line)
     {
-        StringBuilder trWord = new StringBuilder();
-        StringBuilder originalWord = new StringBuilder(word.toLowerCase());
-
-        if (wordMap.containsKey(word))
-        {
-            return wordMap.get(word);
+        for (String key : wordMap.keySet()) {
+            if (line.contains(key)) {
+                line = line.replace(key, wordMap.get(key));
+            }
         }
-        else
-        {
-            return word;
-        }
+        return line;
 
     }
 }
