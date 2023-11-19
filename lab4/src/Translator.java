@@ -1,54 +1,57 @@
 import exceptions.FileReadException;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.*;
 
-public class Translator
-{
-    private static final String INVALID_DATA_EXCEPTION = "Can't read data from file!";
+public class Translator {
+    //private static final String INVALID_DATA_EXCEPTION = "Can't read data from file!";
     private static final String FILE_READ_EXCEPTION = "Can't read source file!";
     private final Dictionary dict_;
 
-    public Translator(Dictionary dict)
-    {
+    public Translator(Dictionary dict) {
         this.dict_ = dict;
     }
 
-    public String translate(File file) throws FileReadException {
+    public void translate(File file) throws FileReadException {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
             StringBuilder translatedText = new StringBuilder();
 
             while ((line = reader.readLine()) != null) {
-                String[] words = line.split("\\s+");
-
-                for (String word : words) {
-                    String cleanedWord = word.replaceAll("[^a-zA-Zа-яА-Я0-9]", "");
-                    String translation = dict_.getTranslation(cleanedWord.toLowerCase());
-
-                    StringBuilder translatedWord = new StringBuilder();
-                    translatedWord.append(translation);
-                    int i = 0;
-                    while (i < word.length()) {
-                        if (!Character.isLetterOrDigit(word.charAt(i))) {
-                            translatedWord.append(word.charAt(i));
-                        }
-                        i++;
-                    }
-
-                    translatedText.append(translatedWord.toString()).append(" ");
-                }
+                String translatedLine = translateLine(line.toLowerCase());
+                System.out.println(translatedLine);
             }
             reader.close();
-            return translatedText.toString();
         } catch (IOException e) {
-            throw new FileReadException(FILE_READ_EXCEPTION);
+            System.err.println(FILE_READ_EXCEPTION);
         }
+    }
+
+    /*private String findBestTranslation(String word) {
+        if (dict_.wordMap.containsKey(word)) {
+            return dict_.wordMap.get(word);
+        } else {
+            // Поиск наиболее подходящего варианта по максимальной длине левой части
+            String maxMatch = "";
+            for (String key : dict_.wordMap.keySet()) {
+                if (word.startsWith(key) && key.length() > maxMatch.length()) {
+                    maxMatch = key;
+                }
+            }
+            return dict_.wordMap.getOrDefault(maxMatch, word);
+        }
+    }
+     */
+
+    private String translateLine(String line) {
+        for (String key : dict_.wordMap.keySet()) {
+            if (line.contains(key)) {
+                line = line.replace(key, dict_.wordMap.get(key));
+            }
+        }
+        return line;
     }
 }

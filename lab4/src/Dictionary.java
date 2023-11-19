@@ -8,7 +8,7 @@ public class Dictionary {
     private static final String INVALID_FILE_FORMAT_EXCEPTION = "Invalid structure of dictionary!";
     private static final String FILE_READ_EXCEPTION = "Can't read dictionary file!";
 
-    private final Map<String, String > wordMap = new HashMap<>();
+    public final Map<String, String > wordMap = new HashMap<>();
 
     public Dictionary(File file) throws InvalidFileFormatException, FileReadException
     {
