@@ -5,7 +5,6 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-        final File PATH_TEXT = new File("C:\\Users\\Алексей\\IdeaProjects\\Java-OOP\\lab4\\src\\example.txt");
         try {
             //File file = new File("/Users/alexykoba/IdeaProjects/lab4/src/dictionary.txt");
             File file = new File("C:\\Users\\Алексей\\IdeaProjects\\Java-OOP\\lab4\\src\\dictionary.txt");
