@@ -16,7 +16,7 @@ public class Dictionary {
             int lengthCompare = Integer.compare(s2.length(), s1.length());
             return lengthCompare != 0 ? lengthCompare : s2.compareTo(s1);
         }
-    });
+    }/*Collections.reverseOrder()*/);
 
     public Dictionary(File file) throws InvalidFileFormatException, FileReadException
     {
