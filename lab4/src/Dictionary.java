@@ -1,14 +1,22 @@
+import com.sun.source.tree.Tree;
 import exceptions.FileReadException;
 import exceptions.InvalidFileFormatException;
 
 import java.io.*;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class Dictionary {
     private static final String INVALID_FILE_FORMAT_EXCEPTION = "Invalid structure of dictionary!";
     private static final String FILE_READ_EXCEPTION = "Can't read dictionary file!";
 
-    public final Map<String, String > wordMap = new HashMap<>();
+    public TreeMap<String, String > wordMap = new TreeMap<>(new Comparator<String>() {
+        @Override
+        public int compare(String s1, String s2) {
+            int lengthCompare = Integer.compare(s2.length(), s1.length());
+            return lengthCompare != 0 ? lengthCompare : s2.compareTo(s1);
+        }
+    });
 
     public Dictionary(File file) throws InvalidFileFormatException, FileReadException
     {
@@ -25,16 +33,14 @@ public class Dictionary {
             {
                 String[] parts = line.split("\\|");
 
-                if (parts.length == 2)
-                {
-                    String word = parts[0].toLowerCase().trim();
-                    String translation = parts[1].toLowerCase().trim();
-                    wordMap.put(word, translation);
-                }
-                else
+                if (parts.length != 2)
                 {
                     throw new InvalidFileFormatException(INVALID_FILE_FORMAT_EXCEPTION);
+
                 }
+                String word = parts[0].toLowerCase().trim();
+                String translation = parts[1].toLowerCase().trim();
+                wordMap.put(word, translation);
             }
 
             reader.close();
@@ -49,7 +55,8 @@ public class Dictionary {
     {
         for (String key : wordMap.keySet()) {
             if (line.contains(key)) {
-                line = line.replace(key, wordMap.get(key));
+                String regex = "(?i)\\b" + key + "\\b";
+                line = line.replaceAll(regex, wordMap.get(key));
             }
         }
         return line;

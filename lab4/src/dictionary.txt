@@ -1,3 +1,15 @@
-look | смотреть
 look forward to | ждать с нетерпением
 hello | привет
+I | я
+Alex | Алексей
+am | есть
+learn at | учиться в
+in | в
+Polytech | политехический
+university | университет
+yes | да
+no | нет
+programming | программирование
+learn | учить
+look | смотреть
+ia | иа
