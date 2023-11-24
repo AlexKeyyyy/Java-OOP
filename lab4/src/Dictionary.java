@@ -4,11 +4,16 @@ import exceptions.InvalidFileFormatException;
 import java.io.*;
 import java.util.*;
 
-public class Dictionary {
+import static java.util.Collections.*;
+
+public class Dictionary
+{
     private static final String INVALID_FILE_FORMAT_EXCEPTION = "Invalid structure of dictionary!";
     private static final String FILE_READ_EXCEPTION = "Can't read dictionary file!";
-
-    private final Map<String, String > wordMap = new HashMap<>();
+    private TreeMap< String, String > wordMap = new TreeMap<>((s1, s2) -> {
+        int lengthCompare = Integer.compare(s2.length(), s1.length());
+        return lengthCompare != 0 ? lengthCompare : s2.compareTo(s1);
+    });
 
     public Dictionary(File file) throws InvalidFileFormatException, FileReadException
     {
@@ -17,27 +22,23 @@ public class Dictionary {
 
     private void readFile(File file) throws InvalidFileFormatException, FileReadException
     {
-        try
+        try ( BufferedReader reader = new BufferedReader( new FileReader(file)) )
         {
-            BufferedReader reader = new BufferedReader( new FileReader(file));
             String line;
             while ((line = reader.readLine()) != null)
             {
                 String[] parts = line.split("\\|");
 
-                if (parts.length == 2)
-                {
-                    String word = parts[0].toLowerCase().trim();
-                    String translation = parts[1].toLowerCase().trim();
-                    wordMap.put(word, translation);
-                }
-                else
+                if (parts.length != 2)
                 {
                     throw new InvalidFileFormatException(INVALID_FILE_FORMAT_EXCEPTION);
+
                 }
+                String word = parts[0].toLowerCase().trim();
+                String translation = parts[1].toLowerCase().trim();
+                wordMap.put(word, translation);
             }
 
-            reader.close();
         }
         catch(IOException e)
         {
@@ -45,19 +46,24 @@ public class Dictionary {
         }
     }
 
-    public String getTranslation(String word)
+    public String getTranslation(String line)
     {
-        StringBuilder trWord = new StringBuilder();
-        StringBuilder originalWord = new StringBuilder(word.toLowerCase());
-
-        if (wordMap.containsKey(word))
+        for (String key : wordMap.keySet())
         {
-            return wordMap.get(word);
+            if (line.contains(key))
+            {
+                String regex = "(?i)\\b" + key + "\\b";
+                line = line.replaceAll(regex, wordMap.get(key));
+            }
         }
-        else
-        {
-            return word;
-        }
+        return line;
+    }
 
+    public void printDict()
+    {
+        for (Map.Entry<String, String> entry : wordMap.entrySet())
+        {
+            System.out.println(entry.getKey() + " | " + entry.getValue());
+        }
     }
 }

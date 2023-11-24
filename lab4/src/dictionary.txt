@@ -1,6 +1,16 @@
+look forward to | ждать с нетерпением
 hello | привет
-bye |  пока
-gay | пидарас
 I | я
+Alex | Алексей
+am | есть
+learn at | учиться в
+in | в
+polytech | политехический
+university | университет
+yes | да
+no | нет
+programming | программирование
+learn | учить
 look | смотреть
-look forward to | надеяться
+ia | иа
+me | я
