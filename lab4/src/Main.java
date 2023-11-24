@@ -6,13 +6,13 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
         try {
-            File file = new File("/Users/alexykoba/Documents/Java-OOP/Java-OOP/lab4/src/dictionary.txt");
-            //File file = new File("C:\\Users\\Алексей\\IdeaProjects\\Java-OOP\\lab4\\src\\dictionary.txt");
+            File file = new File("./src/dictionary.txt");
             Dictionary dict = new Dictionary(file);
+            System.out.println("СЛОВАРЬ:");
+            dict.printDict();
             Translator translator = new Translator(dict);
-            File file1 = new File("/Users/alexykoba/Documents/Java-OOP/Java-OOP/lab4/src/example.txt");
-            //File file1 = new File("C:\\Users\\Алексей\\IdeaProjects\\Java-OOP\\lab4\\src\\example.txt");
-
+            File file1 = new File("./src/test.txt");
+            System.out.println("\nПЕРЕВОД:");
             translator.translate(file1);
         }
         catch(InvalidFileFormatException | FileReadException e)

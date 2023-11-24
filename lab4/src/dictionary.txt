@@ -5,7 +5,7 @@ Alex | Алексей
 am | есть
 learn at | учиться в
 in | в
-Polytech | политехический
+polytech | политехический
 university | университет
 yes | да
 no | нет
@@ -13,3 +13,4 @@ programming | программирование
 learn | учить
 look | смотреть
 ia | иа
+me | я
