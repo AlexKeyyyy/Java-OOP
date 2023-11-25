@@ -11,7 +11,7 @@ public class Main {
             System.out.println("СЛОВАРЬ:");
             dict.printDict();
             Translator translator = new Translator(dict);
-            File file1 = new File("./src/test.txt");
+            File file1 = new File("./src/example.txt");
             System.out.println("\nПЕРЕВОД:");
             translator.translate(file1);
         }

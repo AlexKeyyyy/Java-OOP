@@ -4,13 +4,11 @@ import exceptions.InvalidFileFormatException;
 import java.io.*;
 import java.util.*;
 
-import static java.util.Collections.*;
-
 public class Dictionary
 {
     private static final String INVALID_FILE_FORMAT_EXCEPTION = "Invalid structure of dictionary!";
     private static final String FILE_READ_EXCEPTION = "Can't read dictionary file!";
-    private TreeMap< String, String > wordMap = new TreeMap<>((s1, s2) -> {
+    private final TreeMap< String, String > wordMap = new TreeMap<>((s1, s2) -> {
         int lengthCompare = Integer.compare(s2.length(), s1.length());
         return lengthCompare != 0 ? lengthCompare : s2.compareTo(s1);
     });
