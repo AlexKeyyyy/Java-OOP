@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="876dc6eb-a1f2-4cf9-81b4-4adb19c00875" name="Changes" comment="added TreeMap sorting in constructor">
-      <change beforePath="$PROJECT_DIR$/../lab3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="876dc6eb-a1f2-4cf9-81b4-4adb19c00875" name="Changes" comment="small fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +58,15 @@
     "last_opened_file_path": "/Users/alexykoba/Documents/Java-OOP/Java-OOP/lab4"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="lab4" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="lab4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -110,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700441290773</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="small fix">
+      <option name="closed" value="true" />
+      <created>1700871019806</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700871019806</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +144,7 @@
     <MESSAGE value="rebase getTranslation method" />
     <MESSAGE value="deleted useless lines" />
     <MESSAGE value="added TreeMap sorting in constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="added TreeMap sorting in constructor" />
+    <MESSAGE value="small fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fix" />
   </component>
 </project>

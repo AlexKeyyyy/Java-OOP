@@ -50,7 +50,7 @@ public class Dictionary
         {
             if (line.contains(key))
             {
-                String regex = "(?i)\\b" + key + "\\b";
+                String regex = "\\b" + key + "\\b";
                 line = line.replaceAll(regex, wordMap.get(key));
             }
         }
