@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="876dc6eb-a1f2-4cf9-81b4-4adb19c00875" name="Changes" comment="small fix">
+    <list default="true" id="876dc6eb-a1f2-4cf9-81b4-4adb19c00875" name="Changes" comment="deleted (?i) from regex">
+      <change beforePath="$PROJECT_DIR$/../lab3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,14 +50,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/alexykoba/Documents/Java-OOP/Java-OOP/lab4"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alexykoba/Documents/Java-OOP/Java-OOP/lab4&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="lab4" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -124,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700871019806</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="deleted (?i) from regex">
+      <option name="closed" value="true" />
+      <created>1700872063004</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700872063004</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +153,7 @@
     <MESSAGE value="deleted useless lines" />
     <MESSAGE value="added TreeMap sorting in constructor" />
     <MESSAGE value="small fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fix" />
+    <MESSAGE value="deleted (?i) from regex" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted (?i) from regex" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,51 +49,45 @@ public class Main {
 
     }
 
-    public static <T extends Chordal, T1 extends Chordal, T2 extends Chordal, T3 extends Chordal> void segregate(
-            Collection<T> srcCollection,
-            Collection<T1> collection1,
-            Collection<T2> collection2,
-            Collection<T3> collection3) {
+    public static void segregate(
+            List<? extends Chordal> srcCollection,
+            List<? super CommonHedgehog> collection1,
+            List<? super Manul> collection2,
+            List<? super Lynx> collection3) {
 
         System.out.println("До применения метода segregate:");
         System.out.print("srcCollection: ");
-        printCollection(srcCollection);
+        System.out.println(srcCollection);
         System.out.print("collection1: ");
-        printCollection(collection1);
+        System.out.println(collection1);
         System.out.print("collection2: ");
-        printCollection(collection2);
+        System.out.println(collection2);
         System.out.print("collection3: ");
-        printCollection(collection3);
+        System.out.println(collection3);
 
-        for (T animal : srcCollection) {
+        for (Chordal animal : srcCollection) {
             if (animal.getClass() == CommonHedgehog.class) {
-                collection1.add((T1) animal);
+                collection1.add((CommonHedgehog) animal);
             }
             if (animal.getClass() == Manul.class) {
-                collection2.add((T2) animal);
+                collection2.add((Manul) animal);
             }
             if (animal.getClass() == Lynx.class) {
-                collection3.add((T3) animal);
+                collection3.add((Lynx) animal);
             }
         }
+
+        var v  = collection1.get(0); //будет Object, т.к. super приведет к наивысшему классу
 
         System.out.println("После применения метода segregate:");
         System.out.print("srcCollection: ");
-        printCollection(srcCollection);
+        System.out.println(srcCollection);
         System.out.print("collection1: ");
-        printCollection(collection1);
+        System.out.println(collection1);
         System.out.print("collection2: ");
-        printCollection(collection2);
+        System.out.println(collection2);
         System.out.print("collection3: ");
-        printCollection(collection3);
+        System.out.println(collection3);
 
-    }
-
-    public static <T extends Chordal> void printCollection(Collection<T> collection) {
-        System.out.print("[ ");
-        for (T element : collection) {
-            System.out.print(element.getClass().getName() + " ");
-        }
-        System.out.println("]");
     }
 }
