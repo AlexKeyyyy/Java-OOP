@@ -15,7 +15,7 @@ public class Main {
             System.out.println("\nПЕРЕВОД:");
             translator.translate(file1);
         }
-        catch(InvalidFileFormatException | FileReadException e)
+        catch(FileReadException | InvalidFileFormatException e)
         {
             System.err.println(e.getMessage());
         }
