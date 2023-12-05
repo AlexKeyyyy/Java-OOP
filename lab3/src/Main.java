@@ -77,7 +77,7 @@ public class Main {
             }
         }
 
-        var v  = collection1.get(0); //будет Object, т.к. super приведет к наивысшему классу
+        //var v  = collection1.get(0); //будет Object, т.к. super приведет к наивысшему классу
 
         System.out.println("После применения метода segregate:");
         System.out.print("srcCollection: ");
