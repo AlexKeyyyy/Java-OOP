@@ -15,7 +15,7 @@ public class StreamMethods
     public static List<String> changeStrings(List<String> strings)
     {
         return strings.stream()
-                .map(s -> "_new_" + s.toLowerCase())
+                .map(s -> "_new_" + s.toUpperCase())
                 .collect(Collectors.toList());
     }
 
@@ -53,9 +53,6 @@ public class StreamMethods
 
     public static Map<Character, List<String>> listToMap(List<String> strings)
     {
-//        return strings.stream()
-//                .collect(Collectors.groupingBy(k -> k.charAt(0),
-//                        Collectors.mapping(v -> v.substring(1), Collectors.toList())));
 
         return strings.stream()
                 .collect(Collectors.groupingBy(k -> k.charAt(0),
