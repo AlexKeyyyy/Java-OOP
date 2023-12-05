@@ -7,6 +7,11 @@
     <list default="true" id="876dc6eb-a1f2-4cf9-81b4-4adb19c00875" name="Changes" comment="deleted (?i) from regex">
       <change beforePath="$PROJECT_DIR$/../lab3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Translator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/example.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/example.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,5 +160,16 @@
     <MESSAGE value="small fix" />
     <MESSAGE value="deleted (?i) from regex" />
     <option name="LAST_COMMIT_MESSAGE" value="deleted (?i) from regex" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Dictionary.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -11,8 +11,8 @@ public class Translator
         this.dict_ = dict;
     }
 
-    public void translate(File file) throws FileReadException {
-        try ( BufferedReader reader = new BufferedReader(new FileReader(file)) )
+    public void translate(File srcFile) throws FileReadException {
+        try ( BufferedReader reader = new BufferedReader(new FileReader(srcFile)) )
         {
             String line;
             while ((line = reader.readLine()) != null)
@@ -23,7 +23,7 @@ public class Translator
         }
         catch (IOException e)
         {
-            System.err.println(FILE_READ_EXCEPTION);
+            throw new FileReadException(FILE_READ_EXCEPTION);
         }
     }
 }

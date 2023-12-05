@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -50,10 +48,10 @@ public class Main {
     }
 
     public static void segregate(
-            List<? extends Chordal> srcCollection,
-            List<? super CommonHedgehog> collection1,
-            List<? super Manul> collection2,
-            List<? super Lynx> collection3) {
+            Collection<? extends Chordal> srcCollection,
+            Collection<? super CommonHedgehog> collection1,
+            Collection<? super Manul> collection2,
+            Collection<? super Lynx> collection3) {
 
         System.out.println("До применения метода segregate:");
         System.out.print("srcCollection: ");
@@ -77,7 +75,7 @@ public class Main {
             }
         }
 
-        var v  = collection1.get(0); //будет Object, т.к. super приведет к наивысшему классу
+        //var v  = collection1.get(0); //будет Object, т.к. super приведет к наивысшему классу
 
         System.out.println("После применения метода segregate:");
         System.out.print("srcCollection: ");

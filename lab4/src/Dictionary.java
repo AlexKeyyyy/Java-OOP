@@ -18,19 +18,23 @@ public class Dictionary
         readFile(file);
     }
 
-    private void readFile(File file) throws InvalidFileFormatException, FileReadException
+    private void readFile(File dictFile) throws InvalidFileFormatException, FileReadException
     {
-        try ( BufferedReader reader = new BufferedReader( new FileReader(file)) )
+        try ( BufferedReader reader = new BufferedReader( new FileReader(dictFile)) )
         {
             String line;
             while ((line = reader.readLine()) != null)
             {
-                String[] parts = line.split("\\|");
+                String[] parts = line.trim().split("\\|");
 
                 if (parts.length != 2)
                 {
                     throw new InvalidFileFormatException(INVALID_FILE_FORMAT_EXCEPTION);
 
+                }
+                if (parts[0].isEmpty() | parts[1].isEmpty())
+                {
+                    throw new InvalidFileFormatException(INVALID_FILE_FORMAT_EXCEPTION);
                 }
                 String word = parts[0].toLowerCase().trim();
                 String translation = parts[1].toLowerCase().trim();
@@ -48,10 +52,11 @@ public class Dictionary
     {
         for (String key : wordMap.keySet())
         {
-            if (line.contains(key))
+            String regex = ".*\\b" + key + "\\b.*";
+            if (line.matches(regex))
             {
-                String regex = "\\b" + key + "\\b";
-                line = line.replaceAll(regex, wordMap.get(key));
+                String regex1 = "\\b" + key + "\\b";
+                line = line.replaceAll(regex1, wordMap.get(key));
             }
         }
         return line;
