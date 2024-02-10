@@ -8,12 +8,18 @@ public class Main {
         try {
             File dictFile = new File("./src/dictionary.txt");
             Dictionary dict = new Dictionary(dictFile);
-            System.out.println("СЛОВАРЬ:");
-            dict.printDict();
-            Translator translator = new Translator(dict);
-            File srcFile = new File("./src/example.txt");
-            System.out.println("\nПЕРЕВОД:");
-            translator.translate(srcFile);
+            if (!dict.isEmpty()) {
+                System.out.println("СЛОВАРЬ:");
+                dict.printDict();
+                Translator translator = new Translator(dict);
+                File srcFile = new File("./src/example.txt");
+                System.out.println("\nПЕРЕВОД:");
+                translator.translate(srcFile);
+            }
+            else
+            {
+                System.out.println("Sorry, dictionary is empty!");
+            }
         }
         catch(FileReadException | InvalidFileFormatException e)
         {

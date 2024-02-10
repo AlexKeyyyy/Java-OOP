@@ -1,6 +1,7 @@
 import exceptions.FileReadException;
 
 import java.io.*;
+import java.sql.SQLOutput;
 
 public class Translator
 {
@@ -15,8 +16,7 @@ public class Translator
         try ( BufferedReader reader = new BufferedReader(new FileReader(srcFile)) )
         {
             String line;
-            while ((line = reader.readLine()) != null)
-            {
+            while ((line = reader.readLine()) != null) {
                 String translatedLine = dict_.getTranslation(line.toLowerCase());
                 System.out.println(translatedLine);
             }

@@ -64,9 +64,13 @@ public class Dictionary
 
     public void printDict()
     {
-        for (Map.Entry<String, String> entry : wordMap.entrySet())
-        {
-            System.out.println(entry.getKey() + " | " + entry.getValue());
-        }
+        for (Map.Entry<String, String> entry : wordMap.entrySet()) {
+                System.out.println(entry.getKey() + " | " + entry.getValue());
+            }
+    }
+
+    public boolean isEmpty()
+    {
+        return wordMap.isEmpty();
     }
 }
