@@ -1,7 +1,7 @@
 import exceptions.FileReadException;
 
 import java.io.*;
-import java.sql.SQLOutput;
+
 
 public class Translator
 {
